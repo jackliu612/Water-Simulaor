@@ -4,7 +4,7 @@ from Drop import Drop
 
 bounce_chance = .2
 
-WIDTH = 800
+WIDTH = 1536
 HEIGHT = 800
 
 x_vel = 3
@@ -37,6 +37,10 @@ for i in range(1, 200):
 	drops.append(Drop.from_random(x_vel))
 
 screen = pygame.display.set_mode(size)
+
+if WIDTH==HEIGHT==0:
+	WIDTH, HEIGHT = screen.get_size()
+	print(WIDTH, HEIGHT)
 
 while True:
 	left = pygame.key.get_pressed()[pygame.K_LEFT]
